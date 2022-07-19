@@ -286,7 +286,7 @@ or with docker-compose:
 
 ```bash
 git clone https://github.com/adamoren/fine-search.git
-cd whoogle-search
+cd fine-search
 docker-compose up
 ```
 
@@ -294,22 +294,22 @@ or by building yourself:
 
 ```bash
 git clone https://github.com/adamoren/fine-search.git
-cd whoogle-search
-docker build --tag whoogle-search:1.0 .
-docker run --publish 5000:5000 --detach --name whoogle-search whoogle-search:1.0
+cd fine-search
+docker build --tag fine-search:1.0 .
+docker run --publish 5000:5000 --detach --name fine-search fine-search:1.0
 ```
 
 Optionally, you can also enable some of the following environment variables to further customize your instance:
 
 ```bash
-docker run --publish 5000:5000 --detach --name whoogle-search \
+docker run --publish 5000:5000 --detach --name fine-search \
   -e WHOOGLE_USER=username \
   -e WHOOGLE_PASS=password \
   -e WHOOGLE_PROXY_USER=username \
   -e WHOOGLE_PROXY_PASS=password \
   -e WHOOGLE_PROXY_TYPE=socks5 \
   -e WHOOGLE_PROXY_LOC=ip \
-  whoogle-search:1.0
+  fine-search:1.0
 ```
 
 And kill with: `docker rm --force whoogle-search`
@@ -319,7 +319,7 @@ And kill with: `docker rm --force whoogle-search`
 heroku login
 heroku container:login
 git clone https://github.com/adamoren/fine-search.git
-cd whoogle-search
+cd fine-search
 heroku create
 heroku container:push web
 heroku container:release web
