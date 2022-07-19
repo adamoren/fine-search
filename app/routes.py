@@ -559,7 +559,7 @@ def window():
 
 def run_app() -> None:
     parser = argparse.ArgumentParser(
-        description='Whoogle Search console runner')
+        description='Fine Search console runner')
     parser.add_argument(
         '--port',
         default=5000,

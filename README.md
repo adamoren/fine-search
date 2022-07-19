@@ -1,10 +1,10 @@
-![Whoogle Search](docs/banner.png)
+![Fine Search](docs/banner.png)
 
 [![Latest Release](https://img.shields.io/github/v/release/benbusby/whoogle-search)](https://github.com/benbusby/shoogle/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![tests](https://github.com/benbusby/whoogle-search/actions/workflows/tests.yml/badge.svg)](https://github.com/benbusby/whoogle-search/actions/workflows/tests.yml)
-[![buildx](https://github.com/benbusby/whoogle-search/actions/workflows/buildx.yml/badge.svg)](https://github.com/benbusby/whoogle-search/actions/workflows/buildx.yml)
-[![pep8](https://github.com/benbusby/whoogle-search/workflows/pep8/badge.svg)](https://github.com/benbusby/whoogle-search/actions?query=workflow%3Apep8)
+[![tests](https://github.com/adamoren/fine-search/actions/workflows/tests.yml/badge.svg)](https://github.com/adamoren/fine-search/actions/workflows/tests.yml)
+[![buildx](https://github.com/adamoren/fine-search/actions/workflows/buildx.yml/badge.svg)](https://github.com/adamoren/fine-search/actions/workflows/buildx.yml)
+[![pep8](https://github.com/adamoren/fine-search/workflows/pep8/badge.svg)](https://github.com/adamoren/fine-search/actions?query=workflow%3Apep8)
 [![codebeat badge](https://codebeat.co/badges/e96cada2-fb6f-4528-8285-7d72abd74e8d)](https://codebeat.co/projects/github-com-benbusby-shoogle-master)
 [![Docker Pulls](https://img.shields.io/docker/pulls/benbusby/whoogle-search)](https://hub.docker.com/r/benbusby/whoogle-search)
 
@@ -52,7 +52,7 @@ Contents
 - Autocomplete/search suggestions
 - POST request search and suggestion queries (when possible)
 - View images at full res without site redirect (currently mobile only)
-- Light/Dark/System theme modes (with support for [custom CSS theming](https://github.com/benbusby/whoogle-search/wiki/User-Contributed-CSS-Themes))
+- Light/Dark/System theme modes (with support for [custom CSS theming](https://github.com/adamoren/fine-search/wiki/User-Contributed-CSS-Themes))
 - Randomly generated User Agent
 - Easy to install/deploy
 - DDG-style bang (i.e. `!<tag> <query>`) searches
@@ -80,12 +80,12 @@ If using Heroku Quick Deploy, **you can skip this section**.
 There are a few different ways to begin using the app, depending on your preferences:
 
 ### A) [Heroku Quick Deploy](https://heroku.com/about)
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/benbusby/whoogle-search/tree/main)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/adamoren/fine-search/tree/main)
 
 Provides:
 - Free deployment of app
 - Free HTTPS url (https://\<your app name\>.herokuapp.com)
-- Downtime after periods of inactivity \([solution](https://github.com/benbusby/whoogle-search#prevent-downtime-heroku-only)\)
+- Downtime after periods of inactivity \([solution](https://github.com/adamoren/fine-search#prevent-downtime-heroku-only)\)
 
 Notes:
 - Requires a (free) Heroku account
@@ -120,11 +120,11 @@ Your app is now available at `https://<app-name>.fly.dev`.
 ### D) [pipx](https://github.com/pipxproject/pipx#install-pipx)
 Persistent install:
 
-`pipx install git+https://github.com/benbusby/whoogle-search.git`
+`pipx install git+https://github.com/adamoren/fine-search.git`
 
 Sandboxed temporary instance:
 
-`pipx run --spec git+https://github.com/benbusby/whoogle-search.git whoogle-search`
+`pipx run --spec git+https://github.com/adamoren/fine-search.git whoogle-search`
 
 ### E) pip
 `pip install whoogle-search`
@@ -134,7 +134,7 @@ $ whoogle-search --help
 usage: whoogle-search [-h] [--port <port number>] [--host <ip address>] [--debug] [--https-only] [--userpass <username:password>]
                       [--proxyauth <username:password>] [--proxytype <socks4|socks5|http>] [--proxyloc <location:port>]
 
-Whoogle Search console runner
+Fine Search console runner
 
 optional arguments:
   -h, --help            Show this help message and exit
@@ -160,7 +160,7 @@ See the [available environment variables](#environment-variables) for additional
 Clone the repo and run the following commands to start the app in a local-only environment:
 
 ```bash
-git clone https://github.com/benbusby/whoogle-search.git
+git clone https://github.com/adamoren/fine-search.git
 cd whoogle-search
 python3 -m venv venv
 source venv/bin/activate
@@ -170,7 +170,7 @@ pip install -r requirements.txt
 See the [available environment variables](#environment-variables) for additional configuration.
 
 #### systemd Configuration
-After building the virtual environment, you can add something like the following to `/lib/systemd/system/whoogle.service` to set up a Whoogle Search systemd service:
+After building the virtual environment, you can add something like the following to `/lib/systemd/system/whoogle.service` to set up a Fine Search systemd service:
 
 ```ini
 [Unit]
@@ -285,7 +285,7 @@ docker run --publish 5000:5000 --detach --name whoogle-search benbusby/whoogle-s
 or with docker-compose:
 
 ```bash
-git clone https://github.com/benbusby/whoogle-search.git
+git clone https://github.com/adamoren/fine-search.git
 cd whoogle-search
 docker-compose up
 ```
@@ -293,7 +293,7 @@ docker-compose up
 or by building yourself:
 
 ```bash
-git clone https://github.com/benbusby/whoogle-search.git
+git clone https://github.com/adamoren/fine-search.git
 cd whoogle-search
 docker build --tag whoogle-search:1.0 .
 docker run --publish 5000:5000 --detach --name whoogle-search whoogle-search:1.0
@@ -318,7 +318,7 @@ And kill with: `docker rm --force whoogle-search`
 ```bash
 heroku login
 heroku container:login
-git clone https://github.com/benbusby/whoogle-search.git
+git clone https://github.com/adamoren/fine-search.git
 cd whoogle-search
 heroku create
 heroku container:push web
@@ -366,7 +366,7 @@ There are a few optional environment variables available for customizing a Whoog
 | WHOOGLE_PROXY_TYPE   | The type of the proxy server. Can be "socks5", "socks4", or "http".                       |
 | WHOOGLE_PROXY_LOC    | The location of the proxy server (host or ip).                                            |
 | EXPOSE_PORT          | The port where Whoogle will be exposed.                                                   |
-| HTTPS_ONLY           | Enforce HTTPS. (See [here](https://github.com/benbusby/whoogle-search#https-enforcement)) |
+| HTTPS_ONLY           | Enforce HTTPS. (See [here](https://github.com/adamoren/fine-search#https-enforcement)) |
 | WHOOGLE_ALT_TW       | The twitter.com alternative to use when site alternatives are enabled in the config.      |
 | WHOOGLE_ALT_YT       | The youtube.com alternative to use when site alternatives are enabled in the config.      |
 | WHOOGLE_ALT_IG       | The instagram.com alternative to use when site alternatives are enabled in the config.    |
@@ -410,7 +410,7 @@ To filter by a range of time, append ":past <time>" to the end of your search, w
 
 ## Extra Steps
 ### Set Whoogle as your primary search engine
-*Note: If you're using a reverse proxy to run Whoogle Search, make sure the "Root URL" config option on the home page is set to your URL before going through these steps.*
+*Note: If you're using a reverse proxy to run Fine Search, make sure the "Root URL" config option on the home page is set to your URL before going through these steps.*
 
 Browser settings:
   - Firefox (Desktop)
@@ -449,7 +449,7 @@ Browser settings:
 	  2. Go to `Default Results` and click the `Setup fallback results` button. Click `+` and add Whoogle, then  drag it to the top.
   - Chrome/Chromium-based Browsers
     - Automatic
-      - Visit the home page of your Whoogle Search instance -- this will automatically add the search engine if the [requirements](https://www.chromium.org/tab-to-search/) are met (GET request, no OnSubmit script, no path). If not, you can add it manually.
+      - Visit the home page of your Fine Search instance -- this will automatically add the search engine if the [requirements](https://www.chromium.org/tab-to-search/) are met (GET request, no OnSubmit script, no path). If not, you can add it manually.
     - Manual
       - Under search engines > manage search engines > add, manually enter your Whoogle instance details with a `<whoogle url>/search?q=%s` formatted search URL.
 
@@ -463,7 +463,7 @@ For instance, adding `*/20 7-23 * * * curl https://<your heroku app name>.heroku
 Since the instance is destroyed and rebuilt after inactivity, config settings will be reset once the app enters downtime. If you have configuration settings active that you'd like to keep between periods of downtime (like dark mode for example), you could instead add `*/20 7-23 * * * curl -d "dark=1" -X POST https://<your heroku app name>.herokuapp.com/config > /home/<username>/whoogle-refresh` to keep these settings more or less permanent, and still keep the app from entering downtime when you're using it.
 
 ### HTTPS Enforcement
-Only needed if your setup requires Flask to redirect to HTTPS on its own -- generally this is something that doesn't need to be handled by Whoogle Search.
+Only needed if your setup requires Flask to redirect to HTTPS on its own -- generally this is something that doesn't need to be handled by Fine Search.
 
 Note: You should have your own domain name and [an https certificate](https://letsencrypt.org/getting-started/) in order for this to work properly.
 
@@ -534,7 +534,7 @@ Under the hood, Whoogle is a basic Flask app with the following structure:
     - Key-value JSON files for establishing valid configuration values
 
 
-If you're new to the project, the easiest way to get started would be to try fixing [an open bug report](https://github.com/benbusby/whoogle-search/issues?q=is%3Aissue+is%3Aopen+label%3Abug). If there aren't any open, or if the open ones are too stale, try taking on a [feature request](https://github.com/benbusby/whoogle-search/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement). Generally speaking, if you can write something that has any potential of breaking down in the future, you should write a test for it.
+If you're new to the project, the easiest way to get started would be to try fixing [an open bug report](https://github.com/adamoren/fine-search/issues?q=is%3Aissue+is%3Aopen+label%3Abug). If there aren't any open, or if the open ones are too stale, try taking on a [feature request](https://github.com/adamoren/fine-search/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement). Generally speaking, if you can write something that has any potential of breaking down in the future, you should write a test for it.
 
 The project follows the [PEP 8 Style Guide](https://www.python.org/dev/peps/pep-0008/), but is liable to change. Static typing should always be used when possible. Function documentation is greatly appreciated, and typically follows the below format:
 
@@ -555,7 +555,7 @@ def contains(x: list, y: int) -> bool:
 
 #### Translating
 
-Whoogle currently supports translations using [`translations.json`](https://github.com/benbusby/whoogle-search/blob/main/app/static/settings/translations.json). Language values in this file need to match the "value" of the according language in [`languages.json`](https://github.com/benbusby/whoogle-search/blob/main/app/static/settings/languages.json) (i.e. "lang_en" for English, "lang_es" for Spanish, etc). After you add a new set of translations to `translations.json`, open a PR with your changes and they will be merged in as soon as possible.
+Whoogle currently supports translations using [`translations.json`](https://github.com/adamoren/fine-search/blob/main/app/static/settings/translations.json). Language values in this file need to match the "value" of the according language in [`languages.json`](https://github.com/adamoren/fine-search/blob/main/app/static/settings/languages.json) (i.e. "lang_en" for English, "lang_es" for Spanish, etc). After you add a new set of translations to `translations.json`, open a PR with your changes and they will be merged in as soon as possible.
 
 ## FAQ
 **What's the difference between this and [Searx](https://github.com/asciimoo/searx)?**

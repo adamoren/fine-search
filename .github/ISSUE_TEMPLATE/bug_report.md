@@ -24,7 +24,7 @@ Steps to reproduce the behavior:
 - [ ] pip/pipx
 - [ ] Other: [describe setup]
 
-**Version of Whoogle Search**
+**Version of Fine Search**
 - [ ] Latest build from [source] (i.e. GitHub, Docker Hub, pip, etc)
 - [ ] Version [version number]
 - [ ] Not sure
